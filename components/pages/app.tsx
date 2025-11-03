@@ -32,7 +32,6 @@ export default function Home() {
 
   return (
     <SafeAreaContainer insets={context?.client.safeAreaInsets}>
-      <h1 className="text-3xl font-bold text-center">Harsh</h1>
       <Navbar />
       <Demo />
     </SafeAreaContainer>
