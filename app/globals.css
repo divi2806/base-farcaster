@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.jersey25-font {
+  font-family: var(--jersey25-font, 'Jersey 25');
+}
+
+.teko-font {
+  font-family: var(--teko-font, 'Teko');
+}

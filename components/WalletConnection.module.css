@@ -1,0 +1,242 @@
+.walletConnection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-family: var(--teko-font, 'Teko');
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  color: white;
+  position: relative;
+}
+
+.walletConnection:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Size variants */
+.small {
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+}
+
+.medium {
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
+}
+
+.large {
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+}
+
+/* Connection states */
+.connectedState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.disconnectedState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.connectingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+/* Wallet info */
+.walletInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusText {
+  display: none; /* Hidden in circular design */
+}
+
+.connectedDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4CAF50;
+  animation: pulse 2s infinite;
+}
+
+.disconnectedDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FF6B6B;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.addressContainer {
+  display: none; /* Hidden in compact circular design */
+}
+
+.addressLabel {
+  display: none;
+}
+
+.address {
+  display: none;
+}
+
+/* Wallet actions */
+.walletActions {
+  display: none; /* Hidden in circular design for simplicity */
+}
+
+.menuButton {
+  display: none; /* Hidden in circular design for simplicity */
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 140px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.copyButton,
+.disconnectButton {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyButton:hover {
+  background: rgba(0, 122, 255, 0.05);
+}
+
+.disconnectButton:hover {
+  background: rgba(255, 107, 107, 0.05);
+  color: #FF6B6B;
+}
+
+/* Connect button */
+.connectButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: inherit;
+  font-family: var(--teko-font, 'Teko');
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.connectButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.connectButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.connectButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .small {
+    width: 36px;
+    height: 36px;
+    font-size: 10px;
+  }
+
+  .medium {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+  }
+
+  .large {
+    width: 52px;
+    height: 52px;
+    font-size: 14px;
+  }
+  
+  .connectButton {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+  
+  .connectedDot,
+  .disconnectedDot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Clean, consistent design - no dark mode overrides needed */

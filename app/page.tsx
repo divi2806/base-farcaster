@@ -4,25 +4,25 @@ import type { Metadata } from 'next'
 
 const frame = {
   version: 'next',
-  imageUrl: `${APP_URL}/images/base.png`,
+  imageUrl: `${APP_URL}/images/icon.png`,
   button: {
-    title: 'Launch Template',
+    title: 'Play Survivor: Zombies',
     action: {
       type: 'launch_frame',
-      name: 'Base Farcaster MiniApp Template',
+      name: 'survivor-zombies',
       url: APP_URL,
       splashImageUrl: `${APP_URL}/images/splash.png`,
-      splashBackgroundColor: '#f7f7f7',
+      splashBackgroundColor: '#111111',
     },
   },
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Base Farcaster MiniApp Template',
+    title: 'Survivor: Zombies',
     openGraph: {
-      title: 'Base Farcaster MiniApp Template',
-      description: 'A template for building mini-apps on Farcaster and Base',
+      title: 'Survivor: Zombies',
+      description: 'Fight zombies and survive the night',
     },
     other: {
       'fc:frame': JSON.stringify(frame),
