@@ -4,7 +4,7 @@ import { APP_URL } from "../../../lib/constants";
 export async function GET() {
   const farcasterConfig = {
     "frame": {
-      "name": "survivor-zombies",
+      "name": "KILLZ",
       "version": "1",
       "iconUrl": "https://killz-game-zombie.vercel.app/images/icon.png",
       "homeUrl": "https://killz-game-zombie.vercel.app",

@@ -6,10 +6,10 @@ const frame = {
   version: 'next',
   imageUrl: `${APP_URL}/images/icon.png`,
   button: {
-    title: 'Play Survivor: Zombies',
+    title: 'Play KILLZ',
     action: {
       type: 'launch_frame',
-      name: 'survivor-zombies',
+      name: 'KILLZ',
       url: APP_URL,
       splashImageUrl: `${APP_URL}/images/splash.png`,
       splashBackgroundColor: '#111111',
