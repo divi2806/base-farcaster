@@ -1231,7 +1231,7 @@ export default function SurvivorZombiesGame() {
         infectedElements.push(msgText)
         
         // Warning text
-        const warningText = scene.add.text(WIDTH / 2, HEIGHT / 2, "You will lose health", {
+        const warningText = scene.add.text(WIDTH / 2, HEIGHT / 2, "You will die soon", {
           fontFamily: '"Press Start 2P"',
           fontSize: "12px",
           fill: "#ff6666",
