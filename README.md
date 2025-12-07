@@ -1,4 +1,4 @@
-# Base Sepolia Farcaster MiniApp Template verified for Base Hyperthon (hyperthon.org) 2025 by Prmsnls (permissionless.net)
+# Base Sepolia Farcaster MiniApp Template verified for Base Hyperthon (https://hyperthon.org) 2025 by Prmsnls (https://permissionless.net)
 
 The template demonstrates all Mini App capabilities and lets you easily modify it, so you can build Mini Apps on Base Sepolia testnet.
 
