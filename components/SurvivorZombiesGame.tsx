@@ -1949,6 +1949,187 @@ export default function SurvivorZombiesGame() {
             )
             .setOrigin(0.5)
           instructionText.setShadow(2, 2, "#000000", 2, true, true)
+
+          // Help button in bottom right corner
+          const helpBtn = this.add
+            .text(width - 20, height - 20, "❓", {
+              fontSize: "28px",
+            })
+            .setOrigin(1, 1)
+            .setInteractive()
+            .setDepth(50)
+
+          // Help overlay elements (hidden initially)
+          const helpBgBlack = this.add
+            .rectangle(0, 0, width, height, 0x000000, 0.9)
+            .setOrigin(0)
+            .setDepth(100)
+            .setVisible(false)
+
+          const helpBg = this.add
+            .image(width / 2, height / 2, "shopbg")
+            .setOrigin(0.5)
+            .setDepth(101)
+            .setDisplaySize(340, 520)
+            .setVisible(false)
+
+          const helpTitle = this.add
+            .text(width / 2, height / 2 - 210, "HOW TO SURVIVE", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "14px",
+              fill: "#ff4444",
+              align: "center",
+              stroke: "#000000",
+              strokeThickness: 3,
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const helpStory = this.add
+            .text(width / 2, height / 2 - 150, "You are the last soldier\nleft in the world.\nYour mission: SURVIVE\nand kill zombies!", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "8px",
+              fill: "#ffffff",
+              align: "center",
+              lineSpacing: 6,
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const helpInfection = this.add
+            .text(width / 2, height / 2 - 70, "⚠️ INFECTION WARNING ⚠️\nAfter every 4th kill,\nyou risk infection!\nSolve DNA pairs to survive.", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "7px",
+              fill: "#44ff44",
+              align: "center",
+              lineSpacing: 5,
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const helpDnaTitle = this.add
+            .text(width / 2, height / 2 + 10, "🧬 DNA BASE PAIRS 🧬", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "10px",
+              fill: "#ffff00",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          // DNA pairs table
+          const dnaTableHeader = this.add
+            .text(width / 2, height / 2 + 40, "BASE         PAIRS WITH", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "8px",
+              fill: "#aaaaaa",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const dnaRow1 = this.add
+            .text(width / 2, height / 2 + 65, "A (Adenine)    ↔  T (Thymine)", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "7px",
+              fill: "#ff6666",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const dnaRow2 = this.add
+            .text(width / 2, height / 2 + 85, "T (Thymine)    ↔  A (Adenine)", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "7px",
+              fill: "#66ff66",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const dnaRow3 = this.add
+            .text(width / 2, height / 2 + 105, "G (Guanine)    ↔  C (Cytosine)", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "7px",
+              fill: "#6666ff",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const dnaRow4 = this.add
+            .text(width / 2, height / 2 + 125, "C (Cytosine)   ↔  G (Guanine)", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "7px",
+              fill: "#ffff66",
+              align: "center",
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const helpTip = this.add
+            .text(width / 2, height / 2 + 160, "💡 TIP: A-T and G-C always pair!\nRemember: Apple-Tree, Good-Cat", {
+              fontFamily: '"Press Start 2P"',
+              fontSize: "6px",
+              fill: "#ffffff",
+              align: "center",
+              lineSpacing: 4,
+            })
+            .setOrigin(0.5)
+            .setDepth(102)
+            .setVisible(false)
+
+          const helpCloseBtn = this.add
+            .image(width / 2, height / 2 + 200, "exitbutton")
+            .setOrigin(0.5)
+            .setInteractive()
+            .setDisplaySize(120, 35)
+            .setDepth(102)
+            .setVisible(false)
+
+          // Show help overlay on button click
+          helpBtn.on("pointerdown", () => {
+            helpBgBlack.setVisible(true)
+            helpBg.setVisible(true)
+            helpTitle.setVisible(true)
+            helpStory.setVisible(true)
+            helpInfection.setVisible(true)
+            helpDnaTitle.setVisible(true)
+            dnaTableHeader.setVisible(true)
+            dnaRow1.setVisible(true)
+            dnaRow2.setVisible(true)
+            dnaRow3.setVisible(true)
+            dnaRow4.setVisible(true)
+            helpTip.setVisible(true)
+            helpCloseBtn.setVisible(true)
+          })
+
+          // Hide help overlay on close
+          helpCloseBtn.on("pointerdown", () => {
+            helpBgBlack.setVisible(false)
+            helpBg.setVisible(false)
+            helpTitle.setVisible(false)
+            helpStory.setVisible(false)
+            helpInfection.setVisible(false)
+            helpDnaTitle.setVisible(false)
+            dnaTableHeader.setVisible(false)
+            dnaRow1.setVisible(false)
+            dnaRow2.setVisible(false)
+            dnaRow3.setVisible(false)
+            dnaRow4.setVisible(false)
+            helpTip.setVisible(false)
+            helpCloseBtn.setVisible(false)
+          })
         }
       }
 
