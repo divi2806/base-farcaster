@@ -25,7 +25,11 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'Fight zombies and survive the night',
     },
     other: {
+      // Farcaster Frame
       'fc:frame': JSON.stringify(frame),
+
+      // Base App metadata (THIS is what you needed to add)
+      'base:app_id': '693ab67b8a7c4e55fec73e12',
     },
   }
 }
